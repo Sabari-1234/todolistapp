@@ -45,7 +45,10 @@ ion-datetime::part(calendar-day):focus {
   background-color: rgb(154 209 98 / 0.2);
   box-shadow: 0px 0px 0px 4px rgb(154 209 98 / 0.2);
 }
-
+ion-datetime {
+  --padding-start: 4px; /* Set the start padding to 4px */
+  --padding-end: 4px;
+}
 /*
 * Custom Material Design Datetime Day Parts
 * -------------------------------------------

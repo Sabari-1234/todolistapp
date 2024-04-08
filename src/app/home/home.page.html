@@ -159,20 +159,21 @@
                 >Date & Time</label
               >
               <input
-                type="text"
+                type="date"
                 id="d"
                 class="border h-12 mt-3 rounded-lg"
                 (click)="date()"
-              /><ion-icon
+              />
+              <ion-icon
                 name="calendar-outline"
                 class="absolute top-[2.85rem] left-[19.5rem] text-xl text-[rgb(0,76,108)]"
                 (click)="date()"
               ></ion-icon>
-              <ion-datetime
+              <!-- <ion-datetime
                 presentation="date"
                 *ngIf="isDateClicked"
                 class="absolute z-10 top-24"
-              ></ion-datetime>
+              ></ion-datetime> -->
             </div>
             <div class="flex gap-7">
               <div class="flex flex-col mt-6 relative">
@@ -180,7 +181,7 @@
                   >Start time</label
                 >
                 <input
-                  type="text"
+                  type="time"
                   id="c"
                   class="border h-12 mt-3 rounded-lg w-40"
                 /><ion-icon
@@ -189,7 +190,7 @@
                 ></ion-icon>
                 <!-- <ion-datetime
                   presentation="time"
-                  class="absolute z-10 top-24 -left-3"
+                  class="absolute z-10 top-24 -left-3 text-[rgb(0,76,108)] px-4"
                 ></ion-datetime> -->
               </div>
               <div class="flex flex-col mt-6 relative">
@@ -197,7 +198,7 @@
                   >End time</label
                 >
                 <input
-                  type="text"
+                  type="time"
                   id="b"
                   class="border h-12 mt-3 rounded-lg w-40"
                 /><ion-icon
