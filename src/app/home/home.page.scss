@@ -27,98 +27,104 @@ ion-card-content {
   --checkbox-background-checked: #42b360;
   --border-color-checked: #81e69c;
 }
+@media screen and (max-width: 400px) {
+  .checkBox {
+    --size: 20px;
+    --border-width: 3.8px;
+  }
+}
 
 /*
 * Custom Datetime Day Parts
 * -------------------------------------------
 */
 
-ion-datetime::part(calendar-day) {
-  color: rgb(0, 76, 108);
-}
+// ion-datetime::part(calendar-day) {
+//   color: rgb(0, 76, 108);
+// }
 
-ion-datetime::part(calendar-day today) {
-  color: #8462d1;
-}
+// ion-datetime::part(calendar-day today) {
+//   color: #8462d1;
+// }
 
-ion-datetime::part(calendar-day):focus {
-  background-color: rgb(154 209 98 / 0.2);
-  box-shadow: 0px 0px 0px 4px rgb(154 209 98 / 0.2);
-}
-ion-datetime {
-  --padding-start: 4px; /* Set the start padding to 4px */
-  --padding-end: 4px;
-}
-/*
-* Custom Material Design Datetime Day Parts
-* -------------------------------------------
-*/
+// ion-datetime::part(calendar-day):focus {
+//   background-color: rgb(154 209 98 / 0.2);
+//   box-shadow: 0px 0px 0px 4px rgb(154 209 98 / 0.2);
+// }
+// ion-datetime {
+//   --padding-start: 4px; /* Set the start padding to 4px */
+//   --padding-end: 4px;
+// }
+// /*
+// * Custom Material Design Datetime Day Parts
+// * -------------------------------------------
+// */
 
-ion-datetime.md::part(calendar-day active),
-ion-datetime.md::part(calendar-day active):focus {
-  background-color: #9ad162;
-  border-color: #9ad162;
-  color: #fff;
-}
+// ion-datetime.md::part(calendar-day active),
+// ion-datetime.md::part(calendar-day active):focus {
+//   background-color: #9ad162;
+//   border-color: #9ad162;
+//   color: #fff;
+// }
 
-ion-datetime.md::part(calendar-day today) {
-  border-color: #8462d1;
-}
+// ion-datetime.md::part(calendar-day today) {
+//   border-color: #8462d1;
+// }
 
-/*
-* Custom iOS Datetime Day Parts
-* -------------------------------------------
-*/
+// /*
+// * Custom iOS Datetime Day Parts
+// * -------------------------------------------
+// */
 
-ion-datetime.ios::part(calendar-day active),
-ion-datetime.ios::part(calendar-day active):focus {
-  background-color: rgb(154 209 98 / 0.2);
-  color: #9ad162;
-}
+// ion-datetime.ios::part(calendar-day active),
+// ion-datetime.ios::part(calendar-day active):focus {
+//   background-color: rgb(154 209 98 / 0.2);
+//   color: #9ad162;
+// }
 
-//default icon hide for time  and date type
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
-}
+// //default icon hide for time  and date type
+// input[type="date"]::-webkit-inner-spin-button,
+// input[type="date"]::-webkit-calendar-picker-indicator {
+//   display: none;
+//   -webkit-appearance: none;
+// }
 
-input[type="time"]::-webkit-inner-spin-button,
-input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none;
-  -webkit-appearance: none;
-}
-//default text hide for date type
-input[type="date"]::-webkit-datetime-edit-text {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="date"]::-webkit-datetime-edit-month-field {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="date"]::-webkit-datetime-edit-day-field {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="date"]::-webkit-datetime-edit-year-field {
-  -webkit-appearance: none;
-  display: none;
-}
-//default text hide for time type
-input[type="time"]::-webkit-datetime-edit-text {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="time"]::-webkit-datetime-edit-month-field {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="time"]::-webkit-datetime-edit-day-field {
-  -webkit-appearance: none;
-  display: none;
-}
-input[type="time"]::-webkit-datetime-edit-year-field {
-  -webkit-appearance: none;
-  display: none;
-}
+// input[type="time"]::-webkit-inner-spin-button,
+// input[type="time"]::-webkit-calendar-picker-indicator {
+//   display: none;
+//   -webkit-appearance: none;
+// }
+// //default text hide for date type
+// input[type="date"]::-webkit-datetime-edit-text {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="date"]::-webkit-datetime-edit-month-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="date"]::-webkit-datetime-edit-day-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="date"]::-webkit-datetime-edit-year-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// //default text hide for time type
+// input[type="time"]::-webkit-datetime-edit-text {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="time"]::-webkit-datetime-edit-month-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="time"]::-webkit-datetime-edit-day-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }
+// input[type="time"]::-webkit-datetime-edit-year-field {
+//   -webkit-appearance: none;
+//   display: none;
+// }

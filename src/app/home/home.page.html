@@ -1,12 +1,14 @@
 <ion-content [fullscreen]="true" class="ion-padding" scrollY="false">
-  <ion-toolbar class="my-4">
-    <ion-text>
-      <h1 class="text-black text-2xl">Hello Varun,</h1>
-      <p class="text-zinc-500 text-sm">You have work today</p>
+  <ion-toolbar class="min-[400px]:my-4 mt-2 mb-1">
+    <ion-text class="max-[400px]:relative max-[400px]:bottom-2">
+      <h1 class="text-black min-[400px]:text-2xl text-xl">Hello Varun,</h1>
+      <p class="text-zinc-500 min-[400px]:text-sm text-[12px]">
+        You have work today
+      </p>
     </ion-text>
 
     <ion-buttons slot="end">
-      <ion-avatar>
+      <ion-avatar class="max-[400px]:w-[3.3rem]">
         <img
           alt="Silhouette of a person's head"
           src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -20,78 +22,86 @@
   <ion-grid class="p-0">
     <ion-row class="ion-no-padding">
       <ion-col
-        ><ion-card class="bg-[#b4c4ff] rounded-lg">
-          <ion-card-content>
-            <ion-icon
-              name="time-outline"
-              class="text-[23px] rounded-full bg-white text-[#b4c4ff] border-4 border-white"
-            ></ion-icon>
-            <div class="flex justify-between">
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                Today
-              </p>
+        ><ion-card
+          class="bg-[#b4c4ff] rounded-lg min-[400px]:pt-3 min-[400px]:pb-[0.2rem] min-[400px]:px-4 pt-2 pb-[0.2rem] px-3"
+        >
+          <!-- <ion-card-content> -->
+          <ion-icon
+            name="time-outline"
+            class="min-[400px]:text-[23px] text-[20px] rounded-full bg-white text-[#b4c4ff] border-4 border-white"
+          ></ion-icon>
+          <div class="flex justify-between">
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              Today
+            </p>
 
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                6
-              </p>
-            </div>
-          </ion-card-content>
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              6
+            </p>
+          </div>
+          <!-- </ion-card-content> -->
         </ion-card></ion-col
       >
       <ion-col
-        ><ion-card class="rounded-lg bg-[#cff3e9]">
-          <ion-card-content>
-            <ion-icon
-              name="alarm-outline"
-              class="rounded-full bg-white text-[#cff3e9] text-[23px] border-4 border-white"
-            ></ion-icon>
-            <div class="flex justify-between">
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                Sheduled
-              </p>
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                5
-              </p>
-            </div>
-          </ion-card-content>
+        ><ion-card
+          class="rounded-lg bg-[#cff3e9] min-[400px]:pt-3 min-[400px]:pb-[0.2rem] min-[400px]:px-4 pt-2 pb-[0.2rem] px-3"
+        >
+          <!-- <ion-card-content> -->
+          <ion-icon
+            name="alarm-outline"
+            class="rounded-full bg-white text-[#cff3e9] min-[400px]:text-[23px] text-[20px] border-4 border-white"
+          ></ion-icon>
+          <div class="flex justify-between">
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              Sheduled
+            </p>
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              5
+            </p>
+          </div>
+          <!-- </ion-card-content> -->
         </ion-card></ion-col
       >
     </ion-row>
     <ion-row>
       <ion-col
-        ><ion-card class="bg-[#c191ff] rounded-lg">
-          <ion-card-content>
-            <ion-icon
-              name="repeat-outline"
-              class="text-[23px] rounded-full bg-white text-[#c191ff] border-4 border-white"
-            ></ion-icon>
-            <div class="flex justify-between">
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                All
-              </p>
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                14
-              </p>
-            </div>
-          </ion-card-content>
+        ><ion-card
+          class="bg-[#c191ff] rounded-lg min-[400px]:pt-3 min-[400px]:pb-[0.2rem] min-[400px]:px-4 pt-2 pb-[0.2rem] px-3"
+        >
+          <!-- <ion-card-content> -->
+          <ion-icon
+            name="repeat-outline"
+            class="min-[400px]:text-[23px] text-[20px] rounded-full bg-white text-[#c191ff] border-4 border-white"
+          ></ion-icon>
+          <div class="flex justify-between">
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              All
+            </p>
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              14
+            </p>
+          </div>
+          <!-- </ion-card-content> -->
         </ion-card></ion-col
       >
       <ion-col
-        ><ion-card class="bg-[rgb(244,216,177)] rounded-lg">
-          <ion-card-content>
-            <ion-icon
-              name="timer-outline"
-              class="rounded-full bg-white text-[rgb(244,216,177)] text-[23px] border-4 border-white"
-            ></ion-icon>
-            <div class="flex justify-between">
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                Overdue
-              </p>
-              <p style="font-weight: bold; font-size: 19px" class="text-black">
-                3
-              </p>
-            </div>
-          </ion-card-content>
+        ><ion-card
+          class="bg-[rgb(244,216,177)] rounded-lg min-[400px]:pt-3 min-[400px]:pb-[0.2rem] min-[400px]:px-4 pt-2 pb-[0.2rem] px-3"
+        >
+          <!-- <ion-card-content> -->
+          <ion-icon
+            name="timer-outline"
+            class="rounded-full bg-white text-[rgb(244,216,177)] min-[400px]:text-[23px] text-[20px] border-4 border-white"
+          ></ion-icon>
+          <div class="flex justify-between">
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              Overdue
+            </p>
+            <p class="text-black min-[400px]:text-[19px] text-[16px] font-bold">
+              3
+            </p>
+          </div>
+          <!-- </ion-card-content> -->
         </ion-card></ion-col
       >
     </ion-row>
@@ -103,65 +113,91 @@
     horizontal="end"
     style="margin-bottom: 15px; margin-right: 15px"
   >
-    <ion-fab-button id="open-modal" expand="block">
+    <ion-fab-button
+      id="open-modal"
+      expand="block"
+      class="max-[400px]:w-12 max-[400px]:h-12"
+    >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <h3 class="mt-5 font-bold pb-5">Today's Tasks</h3>
+  <h3
+    class="mt-5 font-bold pb-5 max-[400px]:text-sm max-[400px]:pb-4 max-[400px]:mt-4"
+  >
+    Today's Tasks
+  </h3>
 
   <ion-content class="ion-no-padding h-[60%]">
     <div
-      class="flex justify-between border-2 rounded-2xl py-6 px-6 items-center mb-5"
+      class="flex justify-between border-2 rounded-2xl p-6 items-center mb-5 max-[400px]:py-4 max-[400px]:px-5"
       *ngFor="let item of [].constructor(10);let i=index"
       [ngClass]="{'bg-[#ceffdb]':ischecked[i]}"
     >
       <ion-checkbox class="checkBox" [(ngModel)]="ischecked[i]"></ion-checkbox>
       <div>
-        <h2 class="font-bold text-xl">Email to sabari</h2>
-        <p class="text-sm text-zinc-400">8:00 AM to 12:00 PM</p>
+        <h2 class="font-bold text-xl max-[400px]:text-[1.08rem]">
+          Email to sabari
+        </h2>
+        <p class="text-sm text-zinc-400 max-[400px]:text-[11.6px]">
+          8:00 AM to 12:00 PM
+        </p>
       </div>
       <div>
         <ion-icon
           name="create-outline"
-          class="text-[25px] me-3 text-zinc-500"
+          class="text-[25px] max-[400px]:text-[21px] me-3 text-zinc-500"
         ></ion-icon>
         <ion-icon
           name="trash-outline"
-          class="text-[25px] text-red-500"
+          class="text-[25px] max-[400px]:text-[21px] text-red-500"
         ></ion-icon>
       </div>
     </div>
-    <div class="h-16"></div>
+    <div class="h-16 max-[400px]:h-20"></div>
   </ion-content>
   <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
     <ion-content>
       <ng-template>
         <ion-header class="rounded-b-xl">
-          <div class="flex justify-center items-center h-20">
+          <div
+            class="flex justify-center items-center h-20 max-[400px]:h-[4.3rem]"
+          >
             <ion-icon
               name="chevron-back-outline"
-              class="relative right-[7.2rem] text-[#3b708a] bg-[rgb(230,248,247)] text-xl p-2 font-bold rounded-lg"
+              class="relative right-[7.2rem] max-[400px]:right-[6.5rem] text-[#3b708a] bg-[rgb(230,248,247)] text-xl p-2 font-bold rounded-lg max-[400px]:text-[1.05rem] max-[400px]:p-[0.2]"
               (click)="cancel()"
             ></ion-icon>
-            <p class="text-xl font-bold text-[rgb(0,76,108)]">Add Task</p>
+            <p
+              class="text-xl font-bold text-[rgb(0,76,108)] max-[400px]:text-[1.05rem]"
+            >
+              Add Task
+            </p>
           </div>
         </ion-header>
         <ion-content class="ion-padding">
           <div class="px-4">
-            <div class="flex flex-col mt-5">
-              <label for="a" class="font-bold text-[rgb(0,76,108)]"
+            <div class="flex flex-col mt-5 max-[400px]:mt-3">
+              <label
+                for="a"
+                class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
                 >Task Name</label
               >
-              <input type="text" id="a" class="border h-12 mt-3 rounded-lg" />
+              <ion-input
+                type="text"
+                id="a"
+                class="border h-12 mt-3 rounded-lg max-[400px]:h-10"
+              />
             </div>
-            <div class="flex flex-col mt-6 relative">
-              <label for="d" class="font-bold text-[rgb(0,76,108)]"
+            <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
+              <label
+                for="d"
+                class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
                 >Date & Time</label
               >
-              <input
+              <ion-input
                 type="date"
                 id="d"
-                class="border h-12 mt-3 rounded-lg"
+                class="border h-12 mt-3 rounded-lg max-[400px]:h-10"
                 (click)="date()"
                 style="
                   padding-right: 0;
@@ -171,7 +207,7 @@
               />
               <ion-icon
                 name="calendar-outline"
-                class="absolute top-[2.85rem] left-[19.5rem] text-xl text-[rgb(0,76,108)]"
+                class="absolute top-[2.85rem] left-[19.5rem] text-xl text-[rgb(0,76,108)] max-[400px]:left-[16.5rem] max-[400px]:top-[2.6rem] max-[400px]:text-[1.2rem]"
                 (click)="date()"
               ></ion-icon>
               <!-- <ion-datetime
@@ -180,35 +216,39 @@
                 class="absolute z-10 top-24"
               ></ion-datetime> -->
             </div>
-            <div class="flex gap-7">
-              <div class="flex flex-col mt-6 relative">
-                <label for="c" class="font-bold text-[rgb(0,76,108)]"
+            <div class="flex gap-[1.67rem]">
+              <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
+                <label
+                  for="c"
+                  class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
                   >Start time</label
                 >
-                <input
+                <ion-input
                   type="time"
                   id="c"
-                  class="border h-12 mt-3 rounded-lg w-40"
+                  class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
                 /><ion-icon
                   name="chevron-down-outline"
-                  class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32"
+                  class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
                 ></ion-icon>
                 <!-- <ion-datetime
                   presentation="time"
                   class="absolute z-10 top-24 -left-3 text-[rgb(0,76,108)] px-4"
                 ></ion-datetime> -->
               </div>
-              <div class="flex flex-col mt-6 relative">
-                <label for="b" class="font-bold text-[rgb(0,76,108)]"
+              <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
+                <label
+                  for="b"
+                  class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
                   >End time</label
                 >
-                <input
+                <ion-input
                   type="time"
                   id="b"
-                  class="border h-12 mt-3 rounded-lg w-40"
+                  class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
                 /><ion-icon
                   name="chevron-down-outline"
-                  class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 font-bold"
+                  class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 font-bold max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
                 ></ion-icon>
                 <!-- <ion-datetime
                   presentation="time"
@@ -216,22 +256,23 @@
                 ></ion-datetime> -->
               </div>
             </div>
-            <div class="flex flex-col mt-6">
-              <label for="f" class="font-bold text-[rgb(0,76,108)]"
+            <div class="flex flex-col mt-6 max-[400px]:mt-4">
+              <label
+                for="f"
+                class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
                 >Description</label
               >
 
-              <textarea
+              <ion-textarea
                 name=""
                 id="f"
-                cols="30"
                 rows="4"
                 class="border mt-3 rounded-lg"
-              ></textarea>
+              ></ion-textarea>
             </div>
             <div class="flex justify-center">
               <button
-                class="text-white bg-[rgb(0,76,108)] relative top-64 font-bold py-5 w-full rounded-lg"
+                class="text-white bg-[rgb(0,76,108)] relative top-64 font-bold py-5 w-full rounded-lg max-[400px]:top-40 max-[400px]:py-4 max-[400px]:text-sm"
               >
                 Save Task
               </button>
