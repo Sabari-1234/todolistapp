@@ -206,6 +206,7 @@
                 "
               />
               <ion-icon
+                *ngIf="OSName ==='Android' || OSName ==='ios' "
                 name="calendar-outline"
                 class="absolute top-[2.85rem] left-[19.5rem] text-xl text-[rgb(0,76,108)] max-[400px]:left-[16.5rem] max-[400px]:top-[2.6rem] max-[400px]:text-[1.2rem] z-10"
                 (click)="date()"
@@ -228,6 +229,7 @@
                   id="c"
                   class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
                 /><ion-icon
+                  *ngIf="OSName ==='Android' || OSName ==='ios' "
                   name="chevron-down-outline"
                   class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
                 ></ion-icon>
@@ -247,6 +249,7 @@
                   id="b"
                   class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
                 /><ion-icon
+                  *ngIf="OSName ==='Android' || OSName ==='ios' "
                   name="chevron-down-outline"
                   class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 font-bold max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
                 ></ion-icon>

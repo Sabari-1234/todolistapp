@@ -8,7 +8,21 @@ import { OverlayEventDetail } from '@ionic/core/components';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor() {}
+  OSName = 'Unknown OS';
+  constructor() {
+    if (navigator.platform.indexOf('Win') !== -1) {
+      this.OSName = 'Windows';
+    } else if (navigator.platform.indexOf('Mac') !== -1) {
+      this.OSName = 'MacOS';
+    } else if (navigator.platform.indexOf('Linux') !== -1) {
+      this.OSName = 'Linux';
+    } else if (navigator.platform.indexOf('iPhone') !== -1) {
+      this.OSName = 'iOS';
+    } else if (navigator.platform.indexOf('Android') !== -1) {
+      this.OSName = 'Android';
+    }
+    console.log('Operating System: ' + this.OSName);
+  }
 
   ischecked: boolean[] = new Array(10);
 
