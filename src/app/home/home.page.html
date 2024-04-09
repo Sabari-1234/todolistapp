@@ -114,8 +114,7 @@
     style="margin-bottom: 15px; margin-right: 15px"
   >
     <ion-fab-button
-      id="open-modal"
-      expand="block"
+      (click)="openModel()"
       class="max-[400px]:w-12 max-[400px]:h-12"
     >
       <ion-icon name="add"></ion-icon>
@@ -130,32 +129,41 @@
   <ion-content class="ion-no-padding h-[60%]">
     <div
       class="flex justify-between border-2 rounded-2xl p-6 items-center mb-5 max-[400px]:py-4 max-[400px]:px-5"
-      *ngFor="let item of [].constructor(10);let i=index"
-      [ngClass]="{'bg-[#ceffdb]':ischecked[i]}"
+      *ngFor="let item of todoData;let i=index"
+      [ngClass]="{'bg-[#ceffdb]':item.status}"
     >
-      <ion-checkbox class="checkBox" [(ngModel)]="ischecked[i]"></ion-checkbox>
+      <ion-checkbox
+        class="checkBox"
+        [(ngModel)]="item.status"
+        (click)="checked(item._id,item.status)"
+      ></ion-checkbox>
       <div>
         <h2 class="font-bold text-xl max-[400px]:text-[1.08rem]">
-          Email to sabari
+          <!-- Email to sabari -->{{item.taskName}}
         </h2>
         <p class="text-sm text-zinc-400 max-[400px]:text-[11.6px]">
-          8:00 AM to 12:00 PM
+          <!-- 8:00 AM to 12:00 PM -->
+          {{item.startTime}} to {{item.endTime}}
         </p>
       </div>
       <div>
         <ion-icon
           name="create-outline"
           class="text-[25px] max-[400px]:text-[21px] me-3 text-zinc-500"
+          (click)="edit(item._id)"
+          id="open-modal"
+          expand="block"
         ></ion-icon>
         <ion-icon
           name="trash-outline"
           class="text-[25px] max-[400px]:text-[21px] text-red-500"
+          (click)="delete(item._id)"
         ></ion-icon>
       </div>
     </div>
     <div class="h-16 max-[400px]:h-20"></div>
   </ion-content>
-  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <ion-modal [isOpen]="isModalOpen">
     <ion-content>
       <ng-template>
         <ion-header class="rounded-b-xl">
@@ -170,117 +178,134 @@
             <p
               class="text-xl font-bold text-[rgb(0,76,108)] max-[400px]:text-[1.05rem]"
             >
-              Add Task
+              {{ isedit ?"Edit Task": "Add Task"}}
             </p>
           </div>
         </ion-header>
         <ion-content class="ion-padding">
-          <div class="px-4">
-            <div class="flex flex-col mt-5 max-[400px]:mt-3">
-              <label
-                for="a"
-                class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
-                >Task Name</label
-              >
-              <ion-input
-                type="text"
-                id="a"
-                class="border h-12 mt-3 rounded-lg max-[400px]:h-10"
-              />
-            </div>
-            <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
-              <label
-                for="d"
-                class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
-                >Date & Time</label
-              >
-              <ion-input
-                type="date"
-                id="d"
-                class="border h-12 mt-3 rounded-lg max-[400px]:h-10"
-                (click)="date()"
-                style="
-                  padding-right: 0;
-                  background-image: none;
-                  background-color: white;
-                "
-              />
-              <ion-icon
-                *ngIf="OSName ==='Android' || OSName ==='ios' "
-                name="calendar-outline"
-                class="absolute top-[2.85rem] left-[19.5rem] text-xl text-[rgb(0,76,108)] max-[400px]:left-[16.5rem] max-[400px]:top-[2.6rem] max-[400px]:text-[1.2rem] z-10"
-                (click)="date()"
-              ></ion-icon>
-              <!-- <ion-datetime
+          <form action="" #form1="ngForm">
+            <div class="px-4">
+              <div class="flex flex-col mt-5 max-[400px]:mt-3">
+                <label
+                  for="a"
+                  class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
+                  >Task Name</label
+                >
+                <ion-input
+                  type="text"
+                  name="taskName"
+                  ngModel
+                  id="a"
+                  class="border h-12 mt-3 rounded-lg max-[400px]:h-10"
+                  [(ngModel)]="editData.taskName"
+                />
+              </div>
+              <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
+                <label
+                  for="d"
+                  class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
+                  >Date & Time</label
+                >
+                <ion-input
+                  type="date"
+                  id="d"
+                  name="date"
+                  ngModel
+                  class="border h-12 mt-3 rounded-lg max-[400px]:h-10"
+                  (click)="date()"
+                  style="
+                    padding-right: 0;
+                    background-image: none;
+                    background-color: white;
+                  "
+                  [(ngModel)]="editData.date"
+                />
+                <ion-icon
+                  *ngIf="OSName ==='Android' || OSName ==='ios' "
+                  name="calendar-outline"
+                  class="absolute top-[2.85rem] left-[19.5rem] text-xl text-[rgb(0,76,108)] max-[400px]:left-[16.5rem] max-[400px]:top-[2.6rem] max-[400px]:text-[1.2rem] z-10"
+                  (click)="date()"
+                ></ion-icon>
+                <!-- <ion-datetime
                 presentation="date"
                 *ngIf="isDateClicked"
                 class="absolute z-10 top-24"
               ></ion-datetime> -->
-            </div>
-            <div class="flex gap-[1.67rem]">
-              <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
-                <label
-                  for="c"
-                  class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
-                  >Start time</label
-                >
-                <ion-input
-                  type="time"
-                  id="c"
-                  class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
-                /><ion-icon
-                  *ngIf="OSName ==='Android' || OSName ==='ios' "
-                  name="chevron-down-outline"
-                  class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
-                ></ion-icon>
-                <!-- <ion-datetime
+              </div>
+              <div class="flex gap-[1.67rem]">
+                <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
+                  <label
+                    for="c"
+                    class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
+                    >Start time</label
+                  >
+                  <ion-input
+                    type="time"
+                    name="startTime"
+                    ngModel
+                    id="c"
+                    class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
+                    [(ngModel)]="editData.startTime"
+                  /><ion-icon
+                    *ngIf="OSName ==='Android' || OSName ==='ios' "
+                    name="chevron-down-outline"
+                    class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
+                  ></ion-icon>
+                  <!-- <ion-datetime
                   presentation="time"
                   class="absolute z-10 top-24 -left-3 text-[rgb(0,76,108)] px-4"
                 ></ion-datetime> -->
-              </div>
-              <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
-                <label
-                  for="b"
-                  class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
-                  >End time</label
-                >
-                <ion-input
-                  type="time"
-                  id="b"
-                  class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
-                /><ion-icon
-                  *ngIf="OSName ==='Android' || OSName ==='ios' "
-                  name="chevron-down-outline"
-                  class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 font-bold max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
-                ></ion-icon>
-                <!-- <ion-datetime
+                </div>
+                <div class="flex flex-col mt-6 relative max-[400px]:mt-4">
+                  <label
+                    for="b"
+                    class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
+                    >End time</label
+                  >
+                  <ion-input
+                    type="time"
+                    name="endTime"
+                    ngModel
+                    id="b"
+                    class="border h-12 mt-3 rounded-lg w-40 max-[400px]:h-10 max-[400px]:w-[8.5rem]"
+                    [(ngModel)]="editData.endTime"
+                  /><ion-icon
+                    *ngIf="OSName ==='Android' || OSName ==='ios' "
+                    name="chevron-down-outline"
+                    class="absolute text-xl text-[rgb(0,76,108)] top-[2.85rem] left-32 font-bold max-[400px]:left-[6.8rem] max-[400px]:top-[2.65rem]"
+                  ></ion-icon>
+                  <!-- <ion-datetime
                   presentation="time"
                   class="absolute z-10 top-24 right-1 -left-5"
                 ></ion-datetime> -->
+                </div>
+              </div>
+              <div class="flex flex-col mt-6 max-[400px]:mt-4">
+                <label
+                  for="f"
+                  class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
+                  >Description</label
+                >
+
+                <ion-textarea
+                  name="description"
+                  ngModel
+                  id="f"
+                  rows="4"
+                  class="border mt-3 rounded-lg"
+                  [(ngModel)]="editData.description"
+                ></ion-textarea>
+              </div>
+              <div class="flex justify-center">
+                <button
+                  (click)="submit(form1)"
+                  class="text-white bg-[rgb(0,76,108)] relative top-64 font-bold py-5 w-full rounded-lg max-[400px]:top-36 max-[400px]:py-4 max-[400px]:text-sm"
+                >
+                  Save Task
+                </button>
               </div>
             </div>
-            <div class="flex flex-col mt-6 max-[400px]:mt-4">
-              <label
-                for="f"
-                class="font-bold text-[rgb(0,76,108)] max-[400px]:text-sm"
-                >Description</label
-              >
-
-              <ion-textarea
-                name=""
-                id="f"
-                rows="4"
-                class="border mt-3 rounded-lg"
-              ></ion-textarea>
-            </div>
-            <div class="flex justify-center">
-              <button
-                class="text-white bg-[rgb(0,76,108)] relative top-64 font-bold py-5 w-full rounded-lg max-[400px]:top-36 max-[400px]:py-4 max-[400px]:text-sm"
-              >
-                Save Task
-              </button>
-            </div>
-          </div>
+          </form>
         </ion-content>
       </ng-template>
     </ion-content>
